@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./reset.css">
+  <style>
+    .container {
+      display: flex;
+      position: fixed;
+      right: -202px;
+      top: 30vh;
+      transition: 0.5s;
+    }
+    .container:hover {
+      right: 0px;
+    }
+    .btn {
+      background: yellowgreen;
+      border: 1px solid orange;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+    }
+    .image {
+      width: 200px;
+      height: 200px;
+      background: greenyellow;
+      border: 1px solid green;
+    }
+    .image.red {
+      background: red;
+    }
+    .image.blue {
+      background: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="btns">
+      <div class="btn a">A</div>
+      <div class="btn b">B</div>
+    </div>
+    <div class="image"></div>
+  </div>
+  <script>
+    (function() {
+      const btns = document.querySelector('.btns');
+
+      btns.addEventListener('mouseover', function(e) {
+        console.dir(e.target);
+      })
+    })();
+  </script>
+</body>
+</html>

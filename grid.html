@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="destyle.css">
+  <style>
+    .grid-container {
+      display: grid;
+      /* grid-template-columns: 100px 300px 200px; */
+      /* grid-template-columns: 1fr 2fr 1fr; */
+      /* grid-template-columns: 1fr 500px 1fr; */
+      /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+      /* grid-template-columns: repeat(2, 1fr 2fr); */
+      /* grid-template-columns: repeat(3, 1fr); */
+      /* grid-template-columns: repeat(auto-fill, minmax(200px, auto)); */
+      /* grid-template-columns: repeat(auto-fill, minmax(20%, auto)); */
+      grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+      gap: 20px;
+      /* grid-template-rows: 200px 200px; */
+      /* grid-template-rows: repeat(3, 1fr); */
+      /* grid-template-rows: repeat(3, minmax(100px, auto)); */
+      /* height: 80vh; */
+      grid-auto-rows: minmax(100px, auto);
+    }
+    .grid-item {
+      background: orange;
+      border: 1px solid black;
+      color: white;
+      display: inline;
+    }
+    .grid-item:nth-child(1) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="grid-item">A</div>
+    <div class="grid-item">B</div>
+    <div class="grid-item">C</div>
+    <div class="grid-item">D</div>
+    <div class="grid-item">E</div>
+    <div class="grid-item">F</div>
+    <div class="grid-item">G</div>
+    <div class="grid-item">H</div>
+    <div class="grid-item">I</div>
+  </div>
+</body>
+</html>

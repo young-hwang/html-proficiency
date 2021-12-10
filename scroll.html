@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+    img {
+      max-width: 100%;
+    }
+    .output {
+      position: fixed;
+      left: 0;
+      top : 0;
+      width: 100%;
+      font-size: 2rem;
+      font-weight: 200;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .content {
+      height: 1000vh;
+      padding: 20%;
+      background: yellowgreen;
+    }
+    .ilbuni {
+      width: 100px;
+      margin: 20px auto;
+      transition: 1s
+    }
+    .ilbuni.zoom {
+      transform: scale(2);
+    }
+  </style>
+</head>
+<body>
+  <div class="output">Output</div>
+  <div class="content">
+    <p>
+      에펨 커뮤니티의 발롱 인증 사진들을 보고 분석했다
+      공통적으로 모두 시즌 시작 부터 발롱 받기 전까지 15경기 이상을 뛴 명성이 높고 평균 평점 7.0~7.5이상의 선수들이 받았다
+      이에 시험적으로 FM, FMT, FMM 모두 6시즌씩 각각 시험 해보았다 팀과 선수는 FM은 맨유 폴 포그바, FMT와 FMM은 토트넘 손흥민,케인으로 도전했다.
+      컴터는 전시즌에 챔스를 우승하던 말던, 트레블이나 챔스포함 더블을 하던 말던 명성높은 애 랜덤으로 준다 그 최대 수혜자가 플레이어의 팀에
+      소속된 것이 아니라면 리오넬 메시, 크리스티아누 호날두, 특히 킬.리.안 음.바.페가 명성이 높아 대부분을 수상한다 (네좆 주륵ㅠ)
+      이 세명과의 싸움이다.
+      여기서 중요한 것은 내가 플레이하는 팀의 선수 가 어떻게 받냐는 것이냐? 무조건 적인 것은 아니지만 내 선수가 컴터가 정하는 랜덤보다
+      우선순위를 높이는 방법을 발견했다.
+      우선 발롱받을 시즌 전시즌의 챔스우승 혹은 챔스포함 더블, 트레블을 이룩해야한다
+      그리고 시즌 시작하고 친성경기를 제외한 15경기 이상을 뛰어야 된다 보통 발롱은 11월~12월에 열린다 그때까지 리그와 챔스, 컵경기 다 합해서
+      17~18경기 정도를 뛴다. 그렇다 단 2번 밖에 못쉰다 최대 3번이다 게다가 친선경기를 안뛰어도 되냐 그것도 아니다 이 친선경기를 안뛰면
+      전반적으로 경기력이 시즌 극초반는에 안 살아나는 경향이 보여 평점 조져서 발롱 2위 받을 확률이 높다. 이렇게 15경기 이상을 뛰고 평균 평점
+      주전으로 뛰어도 된다 무 조 건 시즌 초반이 중요하다.
+      발롱은 시즌 시작하고 발롱 시상식 열리는 8월부터 11월,12월까지에서 결정 나는 것이다
+    </p>
+    <figure class="ilbuni">
+      <img  src="images/ilbuni_0.png" alt="일분이">
+    </figure>
+  </div>
+  <script>
+    (function() {
+      const outputElem = document.querySelector('.output');
+      const ilbuniElem = document.querySelector('.ilbuni');
+
+      function showValue() {
+        // outputElem.innerHTML = window.pageYOffset;
+        // outputElem.innerHTML = ilbuniElem.offsetTop;
+        console.dir(ilbuniElem);
+        let posY = ilbuniElem.getBoundingClientRect().top;
+        outputElem.innerHTML = posY;
+        if (posY < window.innerHeight * 0.2) {
+          ilbuniElem.classList.add('zoom');
+        } else {
+          ilbuniElem.classList.remove('zoom');
+        }
+      }
+
+      window.addEventListener('scroll', function() {
+        showValue();
+      })
+    })();
+  </script>
+</body>
+</html>

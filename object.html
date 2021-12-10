@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
+</head>
+<body>
+  <h1>Object</h1>
+  <script>
+    // const person = {};
+    // person.name = '일분이';
+    // person.age = 10;
+    // person.introduce = function() {
+    //   console.log('안녕하세요. 저는 일분이이고 나이는 10살이에요.');
+    // }
+
+    // const person = {
+    //   name: '일분이',
+    //   age: 10,
+    //   introduce: function() {
+    //     console.log('안녕하세요. 저는 ' + this.name + '이고 나이는 ' + this.age + '살이에요.');
+    //   }
+    // }
+
+    // const person2 = {
+    //   name: '이분이',
+    //   age: 11,
+    //   introduce: function() {
+    //     console.log('안녕하세요. 저는 ' + this.name + '이고 나이는 ' + this.age + '살이에요.');
+    //   }
+    // }
+    // person.introduce();
+    // person2.introduce();
+
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      // this.introduce = function() {
+      //   console.log('안녕하세요. 저는 ' + this.name + '이고 나이는 ' + this.age + '살이에요.');
+      // }
+    }
+    Person.prototype.introduce = function() {
+       console.log('안녕하세요. 저는 ' + this.name + '이고 나이는 ' + this.age + '살이에요.');
+    };
+
+    const person1 = new Person('일분이', 10);
+    const person2 = new Person('이분이', 8);
+
+    person1.introduce();
+    person2.introduce();
+  </script>
+</body>
+</html>

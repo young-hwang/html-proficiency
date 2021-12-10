@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./reset.css">
+  <style>
+    .menu {
+      width: 80vw;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: gray;
+    }
+    .item {
+      width: 100px;
+      height: 50px;
+      background: yellow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5px;
+    }
+    .item:hover {
+      background: orange;
+      transform: scale(1.1);
+      transition-duration: 1s;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <div class="item">A</div>
+    <div class="item">B</div>
+    <div class="item">C</div>
+  </div>
+</body>
+</html>

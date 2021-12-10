@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+    @keyframes ball-ani {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(200px, 200px);
+      }
+    }
+    .ball {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: red;
+      /* transition: 1s; */
+      margin: -15px 0 0 -15px;
+      animation: ball-ani 1s 3 alternate forwards;
+    }
+    .ball.end{
+      background: dodgerblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="ball"></div>
+  <script>
+    const ballElem = document.querySelector('.ball');
+
+    window.addEventListener('click', function(e) {
+      console.log(e.clientX, e.clientY);
+      ballElem.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px'
+    });
+
+    ballElem.addEventListener('transitionend', function(e) {
+      ballElem.classList.add('end');
+      console.log(e.elapsedTime)
+      console.log(e.propertyName);
+    });
+
+    ballElem.addEventListener('transitionstart', function(e) {
+      ballElem.classList.add('start');
+      console.log(e.elapsedTime);
+      console.log(e.propertyName);
+    });
+  </script>
+</body>
+</html>

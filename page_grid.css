@@ -1,0 +1,136 @@
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.search-form {
+  width: 300px;
+  max-width: 60%;
+  margin-right: 3rem;
+}
+
+.primary {
+  padding: 1rem;
+}
+
+.secondary {
+  padding: 1rem;
+}
+
+.secondary-a {
+  background: white;
+}
+
+.secondary-b {
+  color: white;
+  background: #666;
+}
+
+.footer {
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid black;
+}
+
+.modal {
+  display: none;
+  top: 80px;
+}
+
+#modal-switch:checked ~ .modal {
+  display: flex;
+}
+
+label[for=modal-switch] {
+  position: absolute;
+  top: 1.3rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  /* background: red; */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+label[for=modal-switch]:before {
+  content: '';
+  font-size: 2rem;
+}
+#modal-switch:checked ~ label[for=modal-switch]:before {
+  color: dodgerblue;
+}
+#modal-switch,
+label[for=modal-switch] span {
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  opacity: 0;
+}
+
+@media(min-width: 1024px) {
+  .page {
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+  }
+
+  .header {
+    /* flex-basis: 100%; */
+    /* width: 100%; */
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+  }
+  .menu {
+    /* width: 100% */
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+  }
+  .secondary {
+    /* flex-grow: 1;
+    flex-basis: 0; */
+    /* width: 20%; */
+  }
+  .secondary-a {
+    /* order: 1; */
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+  .secondary-b {
+    /* order: 3; */
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+  }
+  .primary {
+    /* flex-grow: 2;
+    flex-basis: 0; */
+    /* width: 60%; */
+    /* order: 2; */
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+  .footer {
+    /* order: 4; */
+    width: 100%;
+    grid-column: 1 / 4;
+    grid-row: 4 / 5;
+  }
+}
+
+@media (min-width: 1440px) {
+  .page {
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+  }
+}

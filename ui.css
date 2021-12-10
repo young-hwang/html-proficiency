@@ -1,0 +1,159 @@
+/* search-form */
+.search-form {
+  display: flex;
+  height: 30px;
+}
+.search-form input[type='search'] {
+  flex: 1;
+  border: 2px solid gray;
+  border-radius: 0.3em;
+  margin-right: 10px;
+}
+.search-form input[type='button'] {
+  width: 4em;
+  border: 0;
+  background-color: gold;
+  font-size: 1rem;
+  border-radius: 0.3em;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* menu */
+.menu {
+  margin-block-start: 0;
+  padding-inline-start: 0;
+  list-style: none;
+  display: flex;
+}
+
+.menu__item {
+  background-color: gold;
+  width: 25%;
+  transition: 500ms;
+}
+
+.menu__item:hover {
+  background-color: crimson;
+  width: 35%;
+}
+
+.menu__link {
+  display: block;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1em;
+  text-decoration: none;
+  text-align: center;
+}
+
+.menu__link:hover {
+  color: white;
+}
+
+/* content */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+  gap: 2%;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+.card-item__image {
+  height: 0;
+  padding-bottom: 60%;
+  background-image: url('images/ilbuni_1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-item__image img {
+  display: none;
+}
+
+.card-item__caption {
+  background-color: gray;
+  padding: 1em;
+  flex: 1;
+}
+
+@media (min-width: 600px) {
+  /* .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
+  }
+  .card-item {
+    width: 50%;
+    padding: 0 1rem;
+  } */
+}
+
+@media (min-width: 900px) {
+  /* .card-item {
+    width: 33.33%;
+  } */
+}
+
+/* bullet */
+.info-list__item {
+  display: flex;
+  margin: 0.5em 0;
+}
+
+.info-list__item::before {
+  content: '👍';
+  margin-right: 0.5em;
+}
+
+/* user list */
+.user-item {
+  display: flex;
+  margin: 0.5em 0;
+  align-items: center;
+}
+
+.user-item__photo {
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 2px solid gray;
+  border-radius: 50%;
+  background-color: gold;
+  flex-shrink: 0;
+  margin-right: 0.5em;
+}
+
+.user-item__content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.modal {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog {
+ width: 50vw;
+ border-radius: 1em;
+ background: lightgray;
+ padding: 1em;
+}

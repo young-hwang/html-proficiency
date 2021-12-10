@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="destyle.css">
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      gap: 10px;
+      background: lightgray;
+      padding: 5px;
+      grid-template-areas:
+        'header header header'
+        'side-a main side-b'
+        'footer footer footer';
+    }
+    .grid-item {
+      background: orange;
+      color: white;
+      border: solid 1px black;
+    }
+    .header {
+      grid-area: header;
+    }
+    .side-a {
+      grid-area: side-a;
+    }
+    .side-b {
+      grid-area: side-b;
+    }
+    .main {
+      grid-area: main;
+    }
+    .footer {
+      grid-area: footer;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="header grid-item">Header</div>
+    <div class="side-a grid-item">Side A</div>
+    <div class="side-b grid-item">Side B</div>
+    <div class="main grid-item">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, quia ab odit, doloribus provident ducimus delectus, voluptatum quibusdam vitae hic assumenda quod molestiae eaque sapiente! Distinctio tenetur nam dolores corrupti.
+      Doloribus alias aliquam modi delectus? Tempora minima ut exercitationem, inventore nisi pariatur, eligendi quam perspiciatis dolores unde aliquam culpa temporibus quis repellat quasi magni veniam debitis sunt suscipit labore? Et.
+    </div>
+    <div class="footer grid-item">Footer</div>
+  </div>
+</body>
+</html>

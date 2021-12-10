@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+    .container {
+      width: 300px;
+      height: 300px;
+    }
+    .carousel {
+      position: relative;
+      margin-top: 10px;
+      margin-left: 10px;
+      overflow-x: hidden;
+      /* width: 300px; */
+    }
+    .carousel-items{
+      /* width: 1800px; */
+    }
+    .carousel-item {
+      float: left;
+      /* width: 300px;
+      height: 300px; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .carousel-item.item1 {
+      background: green;
+    }
+    .carousel-item.item2 {
+      background: red;
+    }
+    .carousel-item.item3 {
+      background: orange;
+    }
+    .carousel-item.item4 {
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="carousel">
+      <div class="carousel-items">
+        <div class="carousel-item item1">
+          1
+        </div>
+        <div class="carousel-item item2">
+          2
+        </div>
+        <div class="carousel-item item3">
+          3
+        </div>
+        <div class="carousel-item item4">
+          4
+        </div>
+      </div>
+      <div class="btn-list">
+        <button class="btn-prev"><</button>
+        <button class="btn-next">></button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      const container = document.querySelector('.container');
+      const carousel = document.querySelector('.carousel');
+      const carouselItems = document.querySelector('.carousel-items');
+      const carouselItemArr = document.querySelectorAll('.carousel-item');
+      const btnNext = document.querySelector('.btn-next');
+      const btnPrev = document.querySelector('.btn-prev');
+      const itemsCnt = carouselItemArr.length;
+      const slideWidth = 300;
+      let currentIdx = 0;
+
+      let firstItem = carouselItems.firstElementChild;
+      let lastItem = carouselItems.lastElementChild;
+      let clonedFirst = firstItem.cloneNode(true);
+      let clonedLast = lastItem.cloneNode(true);
+
+      carouselItems.appendChild(clonedFirst);
+      carouselItems.insertBefore(clonedLast, carouselItems.firstElementChild);
+      carouselItems.style.transform = `translate3d(-${(currentIdx + 1) * slideWidth}px, 0, 0)`;
+
+      btnNext.addEventListener('click', () => {
+        if (currentIdx++ < itemsCnt) {
+          carouselItems.style.transition = '300ms';
+          carouselItems.style.transform = `translate3d(-${(currentIdx + 1) * slideWidth}px, 0, 0)`;
+        }
+        if (currentIdx === itemsCnt) {
+          setTimeout(() => {
+            currentIdx = 0;
+            carouselItems.style.transition = '0s';
+            carouselItems.style.transform = `translate3d(-${(currentIdx + 1) * slideWidth}px, 0, 0)`;
+          }, 300);
+        }
+      });
+
+      btnPrev.addEventListener('click', () => {
+        if (currentIdx-- >= 0) {
+          carouselItems.style.transition = '300ms';
+          carouselItems.style.transform = `translate3d(-${(currentIdx + 1) * slideWidth}px, 0, 0)`;
+        }
+        if (currentIdx < 0) {
+          setTimeout(() => {
+            currentIdx = itemsCnt - 1;
+            carouselItems.style.transition = '0s'
+            carouselItems.style.transform = `translate3d(-${(currentIdx + 1) * slideWidth}px, 0, 0)`;
+          }, 300);
+        }
+        console.log(currentIdx);
+      })
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+    html {
+      background-color: lightgray;
+    }
+
+    .search-form {
+      display: flex;
+      height: 40px;
+    }
+
+    .search-form input[type='search'] {
+      /* flex-grow: 1; */
+      flex: 1;
+      border: 0;
+      border-radius: 0.3em;
+      font-size: 1rem;
+      margin-right: 10px;
+    }
+    .search-form input[type='submit'] {
+      width: 4em;
+      border: 0;
+      background-color: gold;
+      border-radius: 0.3em;
+      font-size: 1rem;
+
+    }
+  </style>
+</head>
+<body>
+  <form action="" class="search-form">
+    <input type="search">
+    <input type="submit" value="찾기">
+  </form>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+    .card-item {
+      margin-bottom: 2em;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-item__image {
+      height: 0;
+      padding-bottom: 60%;
+      background-color: lightgray;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    .card-item__image img {
+      display: none;
+    }
+    .card-item__content {
+      background: gray;
+      padding: 1em;
+      flex-grow: 1 1 auto;
+    }
+    @media (min-width: 600px) {
+      .card-list {
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: space-between; */
+        margin: 0 -1rem;
+      }
+      .card-item {
+        width: 50%;
+        padding: 0 1rem;
+      }
+    }
+    @media (min-width: 1000px) {
+      .card-item {
+        width: 33%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+  <ul class="card-list">
+    <li class="card-item">
+      <figure class="card-item__image" style="background-image: url(./images/ilbuni_0.png);">
+        <img src="./images/ilbuni_0.png" alt="">
+      </figure>
+      <div class="card-item__content">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos aspernatur vero maiores earum recusandae a saepe nam quis.
+      </div>
+    </li>
+    <li class="card-item">
+      <figure class="card-item__image" style="background-image: url(./images/ilbuni_0.png);">
+        <img src="./images/ilbuni_0.png" alt="">
+      </figure>
+      <div class="card-item__content">
+        Lorem ipsum dolor sit amet consectetur.
+      </div>
+    </li>
+    <li class="card-item">
+      <figure class="card-item__image" style="background-image: url(./images/ilbuni_0.png);">
+        <img src="./images/ilbuni_0.png" alt="">
+      </figure>
+      <div class="card-item__content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nam alias fugiat, dignissimos accusamus molestiae similique eos commodi. Modi ipsa libero quas enim natus optio dolores, fuga aliquam repudiandae maxime!Quis dolores maiores totam ipsum iste repellat quas praesentium in iure perferendis quod illo, fugiat qui aspernatur, dolor aperiam dicta, impedit aliquam eos consequatur! Odio eius pariatur autem aliquid illo!
+      </div>
+    </li>
+    <li class="card-item">
+      <figure class="card-item__image" style="background-image: url(./images/ilbuni_0.png);">
+        <img src="./images/ilbuni_0.png" alt="">
+      </figure>
+      <div class="card-item__content">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos aspernatur vero maiores earum recusandae a saepe nam quis.
+      </div>
+    </li>
+    <li class="card-item">
+      <figure class="card-item__image" style="background-image: url(./images/ilbuni_0.png);">
+        <img src="./images/ilbuni_0.png" alt="">
+      </figure>
+      <div class="card-item__content">
+        Lorem ipsum dolor sit amet consectetur.
+      </div>
+    </li>
+    <li class="card-item">
+      <figure class="card-item__image" style="background-image: url(./images/ilbuni_0.png);">
+        <img src="./images/ilbuni_0.png" alt="">
+      </figure>
+      <div class="card-item__content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nam alias fugiat, dignissimos accusamus molestiae similique eos commodi. Modi ipsa libero quas enim natus optio dolores, fuga aliquam repudiandae maxime!Quis dolores maiores totam ipsum iste repellat quas praesentium in iure perferendis quod illo, fugiat qui aspernatur, dolor aperiam dicta, impedit aliquam eos consequatur! Odio eius pariatur autem aliquid illo!
+      </div>
+    </li>
+  </ul>
+  </nav>
+</body>
+</html>

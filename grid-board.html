@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="destyle.css">
+  <style>
+    @keyframes starting {
+      from {
+        transform: rotateX(0deg) rotateZ(0deg);
+      }
+      to {
+        transform: rotateX(60deg) rotateZ(240deg);
+      }
+    }
+    @keyframes jumping {
+      from {
+        transform: rotateX(-90deg) translateY(-60px) scaleY(0.9);
+      }
+      to {
+        transform: rotateX(-90deg) translateY(-90px);
+      }
+    }
+    body {
+      background: yellow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+    }
+    .game {
+      display: grid;
+      grid-template-columns: repeat(6, 11vmin);
+      grid-template-rows: repeat(6, 11vmin);
+      gap: 1vw;
+      transform: rotateX(45deg);
+      transform-style: preserve-3d;
+      animation: starting 2s 0.5s forwards;
+    }
+    .tile {
+      position: relative;
+      border: 3px solid black;
+      font-size: 2rem;
+      transform-style: preserve-3d;
+    }
+    .tile input {
+      position: absolute;
+      opacity: 0;
+    }
+    .tile label {
+      background: white;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+    }
+    .tile input:checked + label {
+      color: white;
+      background: crimson;
+    }
+    .tile input:checked + label:before {
+      position: absolute;
+      content: '';
+      background: url(images/ilbuni_0.png) no-repeat center;
+      width: 100px;
+      height: 100px;
+      display: block;
+      background-size: contain;
+      animation: jumping 1s infinite alternate;
+    }
+    .tile:nth-child(1) {
+      grid-row: 1;
+      grid-column: 1;
+      border-radius: 50%;
+      transform: rotate(135deg);
+    }
+    .tile:nth-child(2) {
+      grid-row: 1;
+      grid-column: 2;
+      transform: rotate(180deg);
+    }
+    .tile:nth-child(3) {
+      grid-row: 1;
+      grid-column: 3;
+      transform: rotate(180deg);
+    }
+    .tile:nth-child(4) {
+      grid-row: 1;
+      grid-column: 4;
+      transform: rotate(180deg);
+    }
+    .tile:nth-child(5) {
+      grid-row: 1;
+      grid-column: 5;
+      transform: rotate(180deg);
+    }
+    .tile:nth-child(6) {
+      grid-row: 1;
+      grid-column: 6;
+      border-radius: 50%;
+      transform: rotate(225deg);
+    }
+    .tile:nth-child(7) {
+      grid-row: 2;
+      grid-column: 6;
+      transform: rotate(270deg);
+    }
+    .tile:nth-child(8) {
+      grid-row: 3;
+      grid-column: 6;
+      transform: rotate(270deg);
+    }
+    .tile:nth-child(9) {
+      grid-row: 4;
+      grid-column: 6;
+      transform: rotate(270deg);
+    }
+    .tile:nth-child(10) {
+      grid-row: 5;
+      grid-column: 6;
+      transform: rotate(270deg);
+    }
+    .tile:nth-child(11) {
+      grid-row: 6;
+      grid-column: 6;
+      border-radius: 50%;
+      transform: rotate(315deg);
+    }
+    .tile:nth-child(12) {
+      grid-row: 6;
+      grid-column: 5;
+    }
+    .tile:nth-child(13) {
+      grid-row: 6;
+      grid-column: 4;
+    }
+    .tile:nth-child(14) {
+      grid-row: 6;
+      grid-column: 3;
+    }
+    .tile:nth-child(15) {
+      grid-row: 6;
+      grid-column: 2;
+    }
+    .tile:nth-child(16) {
+      grid-row: 6;
+      grid-column: 1;
+      border-radius: 50%;
+      transform: rotate(45deg)
+    }
+    .tile:nth-child(17) {
+      grid-row: 5;
+      grid-column: 1;
+      transform: rotate(90deg)
+    }
+    .tile:nth-child(18) {
+      grid-row: 4;
+      grid-column: 1;
+      transform: rotate(90deg)
+    }
+    .tile:nth-child(19) {
+      grid-row: 3;
+      grid-column: 1;
+      transform: rotate(90deg)
+    }
+    .tile:nth-child(20) {
+      grid-row: 2;
+      grid-column: 1;
+      transform: rotate(90deg)
+    }
+    .tile:nth-child(1) label,
+    .tile:nth-child(6) label,
+    .tile:nth-child(11) label,
+    .tile:nth-child(16) label {
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="game">
+    <div class="tile">
+      <input type="radio" name="tile" id="tile1">
+      <label for="tile1">1</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile2">
+      <label for="tile2">2</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile3">
+      <label for="tile3">3</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile4">
+      <label for="tile4">4</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile5">
+      <label for="tile5">5</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile6">
+      <label for="tile6">6</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile7">
+      <label for="tile7">7</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile8">
+      <label for="tile8">8</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile9">
+      <label for="tile9">9</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile10">
+      <label for="tile10">10</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile11">
+      <label for="tile11">11</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile12">
+      <label for="tile12">12</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile13">
+      <label for="tile13">13</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile14">
+      <label for="tile14">14</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile15">
+      <label for="tile15">15</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile16">
+      <label for="tile16">16</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile17">
+      <label for="tile17">17</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile18">
+      <label for="tile18">18</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile19">
+      <label for="tile19">19</label>
+    </div>
+    <div class="tile">
+      <input type="radio" name="tile" id="tile20">
+      <label for="tile20">20</label>
+    </div>
+  </div>
+</body>
+</html>

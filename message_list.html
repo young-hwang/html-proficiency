@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+    .user-list__item {
+      display: flex;
+      margin: 0.5em 0;
+    }
+
+    .user-list__photo {
+      width: 50px;
+      height: 50px;
+      border: solid 2px gray;
+      border-radius: 50%;
+      background-color: gold;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      flex-shrink: 0;
+      margin-right: 0.5em;
+    }
+
+    .message-list__item {
+      align-items: center;
+    }
+
+    .user-list__content {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="user-list message-list">
+      <li class="user-list__item message-list__item">
+        <figure class="user-list__photo" style="background-image: url(./images/ilbuni_head_front.png);"></figure>
+        <p class="user-list__content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure deleniti fugit veniam unde dolore quasi quia.</p>
+      </li>
+      <li class="user-list__item message-list__item">
+        <figure class="user-list__photo" style="background-image: url(./images/ilbuni_head_front.png);"></figure>
+        <p class="user-list__content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure deleniti fugit veniam unde dolore quasi quia.</p>
+      </li>
+      <li class="user-list__item message-list__item">
+        <figure class="user-list__photo" style="background-image: url(./images/ilbuni_head_front.png);"></figure>
+        <p class="user-list__content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure deleniti fugit veniam unde dolore quasi quia.</p>
+      </li>
+    </ul>
+  </nav>
+</body>
+</html>
