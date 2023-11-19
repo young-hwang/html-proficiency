@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+        div {
+            margin-top: 100px;
+            width: 380px;
+            display: grid;
+        }
+    </style>
+    <title>The Perception of Causality</title>
+</head>
+<body>
+<div>
+<canvas id="myCanvas" width="760" height="400"></canvas>
+    <p height="100px"></p>
+<button id="startButton">start</button>
+<button id="resetButton">reset</button>
+</div>
+<script>
+  const canvas = document.getElementById('myCanvas');
+  const ctx = canvas.getContext('2d');
+  const startButton = document.getElementById('startButton');
+  const resetButton = document.getElementById('resetButton');
+
+  // 초기 위치 및 속도 설정
+  let defaultA = { x: 80, y: 180, radius: 60, dx: 4, dy: 0, color: 'red' };
+  let defaultB = { x: 420, y: 180, radius: 60, dx: 0, dy: 0, color: 'blue' };
+  let myRequest;
+  // 초기 위치 및 속도 설정
+  let ballA = {...defaultA}
+  let ballB = { ...defaultB };
+
+  function drawBall(ball) {
+    ctx.beginPath();
+    ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+    ctx.fillStyle = ball.color;
+    ctx.fill();
+    ctx.closePath();
+  }
+
+  function update() {
+    // 볼 B 업데이트 (A와 부딪힌 후 50ms 후에 움직임)
+    if (ballA.x + ballA.radius >= ballB.x - ballB.radius) {
+      ballA.dx = 0;
+      setTimeout(() => {
+        ballB.dx = 4;
+      }, 200);
+    }
+
+    // 볼 A 업데이트
+    ballA.x += ballA.dx;
+    ballA.y += ballA.dy;
+
+    ballB.x += ballB.dx;
+    ballB.y += ballB.dy;
+
+    // 캔버스 지우기
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // 볼 그리기
+    drawBall(ballA);
+    drawBall(ballB);
+
+    // 애니메이션 프레임 요청
+    myRequest = requestAnimationFrame(update);
+  }
+
+  function reset() {
+    cancelAnimationFrame(myRequest);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ballA = {...defaultA};
+    ballB = {...defaultB};
+    drawBall(ballA);
+    drawBall(ballB);
+  }
+
+  // 애니메이션 시작
+  drawBall(ballA);
+  drawBall(ballB);
+
+  startButton.addEventListener('click', () => {
+    update();
+  })
+
+  resetButton.addEventListener('click', () => {
+    reset();
+  })
+</script>
+</body>
+</html>
